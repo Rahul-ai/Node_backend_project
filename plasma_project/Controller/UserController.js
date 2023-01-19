@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const {prisma} = require('../Configuration/Database')
-
+const {db} = require('../Configuration/dbConfig')
 
 router.get("/", async(req, res)=>{ 
-    res.send("hello Plasma");
+
 })
 
 module.exports = router;
