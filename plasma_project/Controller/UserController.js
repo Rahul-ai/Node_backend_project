@@ -6,7 +6,11 @@ const {db} = require('../Configuration/dbConfig')
 router.get("/", async(req, res)=>{ 
     try
     {
-        const data = await db.user.findMany();
+        const data = await db.user.findMany({
+            // include: {
+            //     posts: true,
+            // }
+        });
         res.status(200).json(data);
     }
     catch(e){
