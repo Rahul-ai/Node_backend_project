@@ -7,7 +7,6 @@ router.get("/", async(req, res)=>{
     try
     {
         const data = await db.user.findMany();
-        console.log(data);
         res.status(200).json(data);
     }
     catch(e){
