@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "seed" : "nodemon script.ts"
+    "seed" : "script.ts"
   },
   "author": "",
   "license": "ISC",
