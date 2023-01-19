@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient()
+const prisma = new PrismaClient({ log : ["query"]})
 
 
 async function main() {
@@ -15,8 +15,8 @@ async function main() {
 
 main()
 .catch(e => { 
-   console.error(e.message)
+   console.error(e.message);
 })
 .finally(async ()=>{ 
-    await prisma.$disconnect()
+    await prisma.$disconnect();
 })
