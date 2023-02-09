@@ -3,7 +3,9 @@ const prisma = new PrismaClient({ log : ["query"]})
 
 
 async function main() {
-    await prisma.user.deleteMany();
+    await prisma.post.deleteMany({});
+    await prisma.user.deleteMany({});
+    
     const user = await prisma.user.create({
         data:
         {   
@@ -18,13 +20,6 @@ async function main() {
             },
         }
     });  
-    // const user = await prisma.user.findMany({
-    //     include: {
-    //         posts: true,
-    //     }
-    // })
-    console.log(user);
-
 }
 
 main()

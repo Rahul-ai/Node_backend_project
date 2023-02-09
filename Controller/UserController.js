@@ -7,9 +7,9 @@ router.get("/", async(req, res)=>{
     try
     {
         const data = await db.user.findMany({
-            // include: {
-            //     posts: true,
-            // }
+            include: {
+                posts: {select:{post:true}},
+            }
         });
         res.status(200).json(data);
     }
