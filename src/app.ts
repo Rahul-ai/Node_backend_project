@@ -8,7 +8,7 @@ const app:Application = express();
 // var cors = require('cors');
 
 // MiddelWare for file upload
-// const { upload, multiUpload } = require('./MiddelWare/fileUpload/FileUpload');
+const { upload, multiUpload } = require('./MiddelWare/fileUpload/FileUpload');
 // const config = require('./Configuration/Config');
 const usercontroller = require('./Controller/UserController')
 
@@ -25,10 +25,10 @@ const usercontroller = require('./Controller/UserController')
 app.use("/User",usercontroller);
 
 // Common function
-// app.post("/upload", upload.single('file'), (req:Request,res:Response) =>{
-//    console.log(req.file)
-//     res.json({path:`${config.Api}${req.file.path}`});
-// });
+app.post("/upload", upload.single('file'), (req:Request,res:Response) =>{
+   console.log(req.file)
+    res.json({path:`http://localhost:3001/${req.file?.path}`});
+});
 
 // if request not found
 app.all('/',(req:Request,res:Response)=>{

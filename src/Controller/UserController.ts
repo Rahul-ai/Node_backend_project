@@ -2,7 +2,7 @@ import express , { Express, Request, Response } from "express";
 
 const router = express.Router();
 
-const {db} = require('../../Configuration/dbConfig')
+const {db} = require('../Configuration/dbConfig')
 
 router.get("/", async(req:Request, res:Response)=>{ 
     try

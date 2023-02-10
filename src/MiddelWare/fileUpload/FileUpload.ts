@@ -1,9 +1,10 @@
-const multer = require('multer');
+import express , { Application, Express, Request, Response } from "express";
+import multer, { FileFilterCallback } from 'multer';
 const uuid = require("uuid").v4;
 // const path = require('path');
 
 const storage = multer.diskStorage({
-    destination:(req,file, cb) =>{
+    destination:(req:Request,file, cb) =>{
         cb(null,'Images')
     },
     filename: (req, file, cb) =>{
