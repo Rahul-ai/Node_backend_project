@@ -36,6 +36,6 @@ app.all('/',(req:Request,res:Response)=>{
     res.status(404).json({message: 'Resource Not Found'})
 });
 
-app.listen(config.Port,()=>{
-    console.log(`Service on ${config.Port}`);
+app.listen(config.port,()=>{
+    console.log(`Service on ${config.port}`);
 });
