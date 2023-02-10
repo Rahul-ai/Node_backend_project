@@ -1,5 +1,5 @@
 import { Entity, Column } from "typeorm"
-import { BaseClass } from "./CommonId"
+import { BaseClass } from "./BaseEntity"
 
 @Entity()
 export class Post extends BaseClass {

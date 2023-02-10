@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
-import { BaseClass } from "./CommonId"
+import { BaseClass } from "./BaseEntity"
 
 @Entity()
 export class User extends BaseClass {
