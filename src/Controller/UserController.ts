@@ -2,7 +2,7 @@ import express , { Express, Request, Response } from "express";
 import { GRepo } from "../GenericCntroller/GRepo";
 const router = express.Router();
 
-const {db} = require('../Configuration/dbConfig')
+// const {db} = require('../Configuration/dbConfig')
 
 const repo = new GRepo();
 

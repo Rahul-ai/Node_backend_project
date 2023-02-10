@@ -1,3 +1,3 @@
-import { PrismaClient } from "@prisma/client";
+// import { PrismaClient } from "@prisma/client";
 
-module.exports = { db: new PrismaClient({ log : ["query"]})};
+// module.exports = { db: new PrismaClient({ log : ["query"]})};
