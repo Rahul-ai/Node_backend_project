@@ -1,4 +1,4 @@
-import { Entity, Column } from "typeorm"
+import { Entity, Column, BaseEntity } from "typeorm"
 import { BaseClass } from "../CommonEntity/BaseEntity"
 import { BaseInterface } from "../EntityInterfaces/BaseInterface"
 

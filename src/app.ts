@@ -1,5 +1,4 @@
 import express , { Application, Express, Request, Response } from "express";
-
 const app:Application = express();
 
 // Lib For Log
@@ -12,7 +11,6 @@ var cors = require('cors');
 const { upload, multiUpload } = require('./MiddelWare/fileUpload/FileUpload');
 const config = require('./Configuration/Config');
 const usercontroller = require('./Controller/UserController')
-
 // MiddelWare lib 
 app.use(cors());
 app.use(morgan('tiny'));
