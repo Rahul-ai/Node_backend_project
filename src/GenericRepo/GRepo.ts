@@ -1,4 +1,4 @@
-import { DataSource, EntitySchema, EntityTarget, Repository } from "typeorm";
+import { EntityTarget} from "typeorm";
 import { Request,Response } from "express";
 const {db} = require('../Configuration/dbConfig');
 
