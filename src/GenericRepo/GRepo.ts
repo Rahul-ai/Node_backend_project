@@ -16,6 +16,17 @@ class GRepo
          res.status(500).json(e);
       }
    }
+
+   public async findOneBy(req: Request, res: Response) {
+      try {
+         console.log()
+         const data = await db.manager.findOneBy(entity, {id : req.params.id});
+         res.status(200).json(data);
+      }
+      catch (e) {
+         res.status(500).json(e);
+      }
+   }
 }
 return new GRepo();
 

@@ -3,9 +3,10 @@ import { Post } from "../entity/Post";
 import { GenericDomainService } from "../GenericRepo/GRepo";
 
 const router = express.Router();
-const a = GenericDomainService(Post);
+const Postrepo = GenericDomainService(Post);
 
 // Router
-router.get("/", a.fetchAll);
+router.get("/", Postrepo.fetchAll);
+router.get("/:id", Postrepo.findOneBy);
 
 module.exports = router;
