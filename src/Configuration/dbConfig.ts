@@ -16,6 +16,7 @@ import { User } from "../entity/User";
     subscribers: [],
     migrations: [],
 });
+
 options.initialize();
 export const db = options;
 

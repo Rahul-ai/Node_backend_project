@@ -1,14 +1,14 @@
 import express , { Express, Request, Response } from "express";
 import { db } from "../Configuration/dbConfig";
 import { User } from "../entity/User";
-import { GRepo } from "../GenericCntroller/GRepo";
+import { GenericDomainService } from "../GenericRepo/GRepo";
 const router = express.Router();
 
 // const {db} = require('../Configuration/dbConfig')
 
-const repo = new GRepo();
+const a = GenericDomainService(User);
 
-router.get("/", repo.fetchAll);
+router.get("/", a.fetchAll);
 
 // router.get("/", async(req:Request, res:Response)=>{ 
 //     try

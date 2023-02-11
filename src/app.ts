@@ -7,13 +7,19 @@ const morgan = require('morgan');
 // cross-origin-request handeler
 var cors = require('cors');
 
-// MiddelWare for file upload
-const { upload, multiUpload } = require('./MiddelWare/fileUpload/FileUpload');
+//Config file
 const config = require('./Configuration/Config');
-const usercontroller = require('./Controller/UserController')
+
+// Controller
+const usercontroller = require('./Controller/UserController');
+const PostController = require('./Controller/PostController');
+
 // MiddelWare lib 
 app.use(cors());
 app.use(morgan('tiny'));
+
+// MiddelWare for file upload
+const { upload, multiUpload } = require('./MiddelWare/fileUpload/FileUpload');
 
 // Inbuild MiddelWare
 app.use('/Images',express.static('Images'));
@@ -22,6 +28,7 @@ app.use(express.json());
  
 // Assign Controllers
 app.use("/User",usercontroller);
+app.use("/Post",PostController);
 
 // Common function
 app.post("/upload", upload.single('file'), (req:Request,res:Response) =>{
@@ -30,7 +37,7 @@ app.post("/upload", upload.single('file'), (req:Request,res:Response) =>{
 });
 
 // if request not found
-app.all('/',(req:Request,res:Response)=>{
+app.all('*',(req:Request,res:Response)=>{
     res.status(404).json({message: 'Resource Not Found'})
 });
 
