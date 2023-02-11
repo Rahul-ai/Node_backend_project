@@ -1,10 +1,11 @@
 import express , { Express, Request, Response } from "express";
+import { User } from "../entity/User";
 import { GRepo } from "../GenericCntroller/GRepo";
 const router = express.Router();
 
 // const {db} = require('../Configuration/dbConfig')
 
-const repo = new GRepo();
+const repo = new GRepo<User>();
 
 router.get("/", repo.fetchAll);
 // router.get("/", async(req:Request, res:Response)=>{ 
