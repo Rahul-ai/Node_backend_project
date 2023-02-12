@@ -7,8 +7,6 @@ class GRepo
 {
    public async fetchAll(req: Request, res: Response) {
       try {
-         
-         // let table = new Set<T>;
          const data = await db.manager.find(entity);
          res.status(200).json(data);
       }
@@ -17,9 +15,8 @@ class GRepo
       }
    }
 
-   public async findOneBy(req: Request, res: Response) {
+   public async getById(req: Request, res: Response) {
       try {
-         console.log()
          const data = await db.manager.findOneBy(entity, {id : req.params.id});
          res.status(200).json(data);
       }
@@ -37,8 +34,16 @@ class GRepo
          res.status(500).json(e);
       }
    }
+
+   public async update(req: Request, res: Response) {
+      try {
+         const data = await db.manager.update(entity,{id: req.params.id}, req.body);
+         res.status(200).json(data);
+      }
+      catch (e) {
+         res.status(500).json(e);
+      }
+   }
 }
 return new GRepo();
-
-  
 }
