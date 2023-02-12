@@ -28,6 +28,7 @@ class GRepo
    public async create(req: Request, res: Response) {
       try {
          const data = await db.manager.create(entity, req.body);
+         await db.manager.save(data);
          res.status(200).json(data);
       }
       catch (e) {
@@ -36,6 +37,22 @@ class GRepo
    }
 
    public async update(req: Request, res: Response) {
+      try {
+         const data = await db.manager.update(entity,{id: req.params.id}, req.body);
+         // await db.manager.save(data);
+         if(data?.affected == 0){
+            res.status(404).json({"message":"No data Updated"});
+         }
+         else{
+            res.status(200).json(req.body);
+         }
+      }
+      catch (e) {
+         res.status(500).json(e);
+      }
+   }
+
+   public async Delete(req: Request, res: Response) {
       try {
          const data = await db.manager.update(entity,{id: req.params.id}, req.body);
          res.status(200).json(data);

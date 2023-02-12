@@ -5,7 +5,9 @@ import { GenericDomainService } from "../GenericRepo/GRepo";
 const router = express.Router();
 const userRepo = GenericDomainService(User);
 
-router.get("/", userRepo.fetchAll);
 router.get("/:id", userRepo.getById);
+router.get("/", userRepo.fetchAll);
+router.post("/", userRepo.create);
+router.put("/:id",userRepo.update);
 
 module.exports = router;
