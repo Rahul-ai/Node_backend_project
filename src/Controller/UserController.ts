@@ -4,7 +4,7 @@ import { User } from "../entity/User";
 import { db } from "../Configuration/dbConfig";
 const router = express.Router();
 
-// Crud Router
+// Crud operation
 controllerService(User,router);
 
 module.exports = router;
