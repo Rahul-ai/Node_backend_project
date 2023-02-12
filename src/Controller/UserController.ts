@@ -6,6 +6,6 @@ const router = express.Router();
 const userRepo = GenericDomainService(User);
 
 router.get("/", userRepo.fetchAll);
-router.get("/:id", userRepo.findOneBy);
+router.get("/:id", userRepo.getById);
 
 module.exports = router;

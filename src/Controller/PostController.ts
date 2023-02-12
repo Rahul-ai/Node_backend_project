@@ -7,6 +7,6 @@ const Postrepo = GenericDomainService(Post);
 
 // Router
 router.get("/", Postrepo.fetchAll);
-router.get("/:id", Postrepo.findOneBy);
+router.get("/:id", Postrepo.getById);
 
 module.exports = router;
