@@ -1,4 +1,4 @@
-import express , { Express, Request, Response } from "express";
+import express from "express";
 import { db } from "../Configuration/dbConfig";
 import { User } from "../entity/User";
 import { GenericDomainService } from "../GenericRepo/GRepo";
