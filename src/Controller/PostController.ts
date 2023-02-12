@@ -1,15 +1,10 @@
-import express from "express";
-import { db } from "../Configuration/dbConfig";
+import express,{ Request, Response } from "express";
+import { controllerService } from "../ControllerService/ControllerService";
 import { Post } from "../entity/Post";
-import { GenericDomainService } from "../GenericRepo/GRepo";
-
+import { db } from "../Configuration/dbConfig";
 const router = express.Router();
-const Postrepo = GenericDomainService(Post);
 
-// Router
-router.get("/:id", Postrepo.getById);
-router.get("/", Postrepo.fetchAll);
-router.post("/", Postrepo.create);
-router.put("/:id", Postrepo.update);
-Postrepo
+// Crud Router
+controllerService(Post,router);
+
 module.exports = router;
