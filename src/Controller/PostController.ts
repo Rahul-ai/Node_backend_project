@@ -7,4 +7,6 @@ const router = express.Router();
 // Crud operation
 controllerService(Post,router);
 
+// other route
+// ...
 module.exports = router;

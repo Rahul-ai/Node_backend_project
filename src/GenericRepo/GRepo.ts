@@ -54,10 +54,11 @@ class GRepo
 
    public async Delete(req: Request, res: Response) {
       try {
-         const data = await db.manager.update(entity,{id: req.params.id}, req.body);
+         const data = await db.manager.softDelete(entity,{id: req.params.id});
          res.status(200).json(data);
       }
       catch (e) {
+         console.log(await db.manager.softDelete(entity,{id: req.params.id}));
          res.status(500).json(e);
       }
    }
