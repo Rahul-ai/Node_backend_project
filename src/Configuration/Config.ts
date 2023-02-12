@@ -3,7 +3,7 @@ import { configModel } from "../Modelhealper/configModel";
 
 const config : configModel = {
     port:3001,
-    Api:'http://localhost:3009/',
+    Api:'http://localhost:3001',
 }
 
 module.exports = config;
