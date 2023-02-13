@@ -4,10 +4,10 @@ import { User } from "../entity/User";
 import { db } from "../Configuration/dbConfig";
 const router = express.Router();
 
+// other route/Api
+// ...
+
 // Crud operation
 controllerService(User,router);
-
-// other route
-// ...
 
 module.exports = router;

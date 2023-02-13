@@ -4,9 +4,11 @@ import { Post } from "../entity/Post";
 import { db } from "../Configuration/dbConfig";
 const router = express.Router();
 
+// other route/Api
+// ...
+
 // Crud operation
 controllerService(Post,router);
 
-// other route
-// ...
+
 module.exports = router;
