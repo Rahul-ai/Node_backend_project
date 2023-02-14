@@ -11,6 +11,7 @@ export const controllerService= <T>(entity:EntityTarget<T>,router:Router)=>{
     router.post("/", repo.create);
     router.put("/:id", repo.update);
     router.delete("/:id", repo.Delete);
+    router.post("/withpage", repo.withPagination);
 
     return router; 
 }

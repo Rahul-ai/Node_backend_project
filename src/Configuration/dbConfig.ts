@@ -18,5 +18,6 @@ import { User } from "../entity/User";
 });
 
 options.initialize();
+
 export const db = options;
 
