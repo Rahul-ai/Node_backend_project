@@ -5,7 +5,7 @@ import { BaseInterface } from "../EntityInterfaces/BaseInterface"
 @Entity()
 export class User extends BaseClass implements BaseInterface{
 
-    @Column()
+    @Column({length:20})
     firstName: string
 
     @Column()
